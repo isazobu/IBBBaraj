@@ -8,5 +8,5 @@ class damVolumeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = damVolume
-        fields = '__all__'
+        fields = ['year','volume','area']
         #['city','_year', 'waterCapita']
