@@ -1,19 +1,16 @@
 //chart1
 pie_UsageRate = [
-]
 
+]
 
   $.get("http://127.0.0.1:8000/api/usageRate/", function(data, status){
     data.forEach(element => {
-      console.log(element)
       pie_UsageRate.push(Object.values(element))
     });
   });
 
-
   
-
-console.log(pie_UsageRate)
+  
 
 google.charts.load('current', { 'packages': ['corechart'] });
 google.charts.setOnLoadCallback(drawChart);
@@ -36,53 +33,82 @@ function drawChart() {
     var chart = new google.visualization.PieChart(document.getElementById('chart1_div'));
     chart.draw(data, options);
 }
-
-
-
-//chart2
-google.charts.load('current', { packages: ['corechart', 'bar'] });
-google.charts.setOnLoadCallback(drawMultSeries);
-
-function drawMultSeries() {
-    var data = new google.visualization.DataTable();
-    data.addColumn('timeofday', 'Time of Day');
-    data.addColumn('number', 'Motivation Level');
-    data.addColumn('number', 'Energy Level');
-
-    data.addRows([
-        [{ v: [8, 0, 0], f: '8 am' }, 1, .25],
-        [{ v: [9, 0, 0], f: '9 am' }, 2, .5],
-        [{ v: [10, 0, 0], f: '10 am' }, 3, 1],
-        [{ v: [11, 0, 0], f: '11 am' }, 4, 2.25],
-        [{ v: [12, 0, 0], f: '12 pm' }, 5, 2.25],
-        [{ v: [13, 0, 0], f: '1 pm' }, 6, 3],
-        [{ v: [14, 0, 0], f: '2 pm' }, 7, 4],
-        [{ v: [15, 0, 0], f: '3 pm' }, 8, 5.25],
-        [{ v: [16, 0, 0], f: '4 pm' }, 9, 7.5],
-        [{ v: [17, 0, 0], f: '5 pm' }, 10, 10],
-    ]);
-
-    var options = {
-        title: 'Motivation and Energy Level Throughout the Day',
-        hAxis: {
-            title: 'Time of Day',
-            format: 'h:mm a',
-            viewWindow: {
-                min: [7, 30, 0],
-                max: [17, 30, 0]
-            }
-        },
-        vAxis: {
-            title: 'Rating (scale of 1-10)'
-        }
-    };
-
-    var chart2 = new google.visualization.ColumnChart(
-        document.getElementById('chart2_div'));
-
-    chart2.draw(data, options);
+// MODIFYING FOR WATER PER CAPITA
+waterPerCapita = []
+var  temp = []
+var year= 2000
+while(year <=2018){  
+  
+ 
+  
+  if (year<2004)
+    {
+      year+=1
+    temp.push(year)
+    }
+  else{
+    temp.push(year)
+    year+=2  
+  }
+  
+  
+    
 }
+var ABC = []
+temp.forEach(year => {
+  var x = []
+  
+  $.get({url: "http://127.0.0.1:8000/api/waterPerCapita/?_year=".concat(year),async:false}, function(data, status){
+   
 
+     x.push(year)
+     data.forEach(element => {
+       var el = Object.values(element)
+
+       x.push(el[3])
+     })
+     console.log(x)
+     ABC.push(x)
+});
+  
+  x =[]
+});
+
+console.log("ABC" ,ABC)
+
+// WATER PER CAPITA
+
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Year');
+      data.addColumn('number', 'İstanbul');
+      data.addColumn('number', 'Ankara');
+      data.addColumn('number', 'İzmir');
+
+      data.addRows(ABC);
+
+      var options = {
+        chart: {
+          title: 'FSDAUFUIAS',
+          subtitle: 'in millions of dollars (USD)'
+        },
+        width: 600,
+        height: 400
+      };
+
+      var chart = new google.charts.Line(document.getElementById('waterPerCapita'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+
+
+
+
+    
 //chart3
 google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart2);
