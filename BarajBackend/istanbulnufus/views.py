@@ -45,15 +45,15 @@ class istanbulNufusList(generics.ListAPIView):
         close_old_connections()
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def delete(self, request):
-        istanbulNufusList = istanbulNufus.objects.all()
-        operation = istanbulNufusList.delete()
-        data ={}
-        if operation: 
-            data['success'] = "delete successful"
-        else:
-            data['failed'] = "delete failed"
-        return  Response(data=data)
+    # def delete(self, request):
+    #     istanbulNufusList = istanbulNufus.objects.all()
+    #     operation = istanbulNufusList.delete()
+    #     data ={}
+    #     if operation: 
+    #         data['success'] = "delete successful"
+    #     else:
+    #         data['failed'] = "delete failed"
+    #     return  Response(data=data)
 
 class istanbulNufusDetail(generics.RetrieveUpdateDestroyAPIView): 
     queryset = istanbulNufus.objects.all()

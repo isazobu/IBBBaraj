@@ -85,6 +85,7 @@ ENV/
 env.bak/ 
 venv.bak/ 
 ibb-env/
+calisma_alani/
 # mkdocs documentation 
 /site 
 

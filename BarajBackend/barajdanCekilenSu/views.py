@@ -37,7 +37,7 @@ class damVolumeList(generics.ListCreateAPIView):
     
     def post(self, request):
         print(request.data)
-        serializer = usageRateSerializer(data=request.data)
+        serializer = damVolumeSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             close_old_connections()
