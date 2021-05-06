@@ -16,7 +16,7 @@ while(year <=2018){
   
 }
 
-  var x = []
+  var chart2Data_NotModified = []
   
   $.get({url: "/api/waterPerCapita" ,async:false}, function(data, status){
    
@@ -24,9 +24,9 @@ while(year <=2018){
      data.forEach(element => {
        var el = Object.values(element)
 
-       x.push(el)
+       chart2Data_NotModified.push(el)
      })
-    console.log(x)
+    //console.log(chart2Data_NotModified)
    
 
 });
@@ -35,7 +35,7 @@ var chart2_data = []
 
 chartYears.forEach(year => {
   var A= []
-  var B = x.filter(el=>el[1] == year)
+  var B = chart2Data_NotModified.filter(el=>el[1] == year)
   
   A.push(year)
   B.forEach(byCity =>  {
@@ -57,7 +57,7 @@ console.log("X", chart2_data)
     function drawChart() {
 
       var data = new google.visualization.DataTable();
-      data.addColumn('number', 'Yıl');
+      data.addColumn('number', 'Yil');
       data.addColumn('number', 'İstanbul');
       data.addColumn('number', 'Ankara');
       data.addColumn('number', 'İzmir');

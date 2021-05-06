@@ -39,7 +39,7 @@ $.get({url: "/api/damVolume/" , async:false}, function(data, status){
 
   
 //x =[]
-var chart2_data = []
+var chart4_data = []
 Chart4_Years.forEach(year => {
     var T = []
     var Y= data_Array_Chart4[0].filter(el=> el[0] == year)
@@ -47,12 +47,12 @@ Chart4_Years.forEach(year => {
     Y.forEach(year => {
         T.push(year[1])
     })
-    chart2_data.push(T)
+    chart4_data.push(T)
     Y = []
     T = []
 })
 
-console.log("Chart- 4", chart2_data)
+console.log("Chart- 4", chart4_data)
 
 
 
@@ -68,7 +68,7 @@ console.log("Chart- 4", chart2_data)
         data.addColumn('number', 'İstanbul');
         data.addColumn('number', 'Türkiye');
 
-        data.addRows(chart2_data)
+        data.addRows(chart4_data)
 
        
         var options = {
