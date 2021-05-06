@@ -1,46 +1,61 @@
-// 01/05/2021 - 22:48pm     
-// @bedirhanGiden
+function filterByPosition(array, number, position) {
+    console.log("Inner pozition", innerArray[position])
+    return array.filter(innerArray => innerArray[position] == number);
+ }
       
 // MODIFYING FOR WATER PER CAPITA
 
-var  temp_Chart4 = []
+var  Chart4_Years = []
 var year= 2000
 while(year <=2018){  
   
   if (year<2004)
     {
       year+=1
-    temp_Chart4.push(year)
+    Chart4_Years.push(year)
     }
   else{
-    temp_Chart4.push(year)
+    Chart4_Years.push(year)
     year+=2  
   }
-  
-  
-    
+
 }
+
+//console.log(Chart4_Years)
+
 var data_Array_Chart4 = []
-temp_Chart4.forEach(year => {
-  var x = []
+var x = []
   
-  $.get({url: "/api/damVolume/?year=".concat(year),async:false}, function(data, status){
-   
-
-     x.push(year)
-     data.forEach(element => {
-       var el = Object.values(element)
-     
-       x.push(el[1])
-     })
-     console.log(x)
-     data_Array_Chart4.push(x)
-});
-  
-  x =[]
+$.get({url: "/api/damVolume/" , async:false}, function(data, status){
+    //x.push(year)
+    data.forEach(element => {
+      var el = Object.values(element)
+     //   console.log(el)
+      x.push(el)
+    })
+    //console.log(x)
+    data_Array_Chart4.push(x)
 });
 
-console.log(data_Array_Chart4)
+  
+//x =[]
+var chart2_data = []
+Chart4_Years.forEach(year => {
+    var T = []
+    var Y= data_Array_Chart4[0].filter(el=> el[0] == year)
+    T.push(year)
+    Y.forEach(year => {
+        T.push(year[1])
+    })
+    chart2_data.push(T)
+    Y = []
+    T = []
+})
+
+console.log("Chart- 4", chart2_data)
+
+
+
 
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawVisualization);
@@ -53,12 +68,12 @@ console.log(data_Array_Chart4)
         data.addColumn('number', 'İstanbul');
         data.addColumn('number', 'Türkiye');
 
-        data.addRows(data_Array_Chart4)
+        data.addRows(chart2_data)
 
        
         var options = {
-          title : 'Monthly Coffee Production by Country',
-          vAxis: {title: 'Su Tüketim Miktarı'},
+          title : 'Barajlardan Çekilen Toplam Su Miktarı',
+          vAxis: {title: 'Çekilen Su Miktarı'},
           hAxis: {title: 'Yıl', format:''},
           seriesType: 'bars',
           series: {5: {type: 'line'}}

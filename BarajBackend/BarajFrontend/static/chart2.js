@@ -1,46 +1,53 @@
 
 // MODIFYING FOR WATER PER CAPITA
 waterPerCapita = []
-var  temp = []
+var  chartYears = []
 var year= 2000
 while(year <=2018){  
-  
- 
-  
-  if (year<2004)
+ if (year<2004)
     {
       year+=1
-    temp.push(year)
+    chartYears.push(year)
     }
   else{
-    temp.push(year)
+    chartYears.push(year)
     year+=2  
   }
   
-  
-    
 }
-var ABC = []
-temp.forEach(year => {
+
   var x = []
   
-  $.get({url: "/api/waterPerCapita/?_year=".concat(year),async:false}, function(data, status){
+  $.get({url: "/api/waterPerCapita" ,async:false}, function(data, status){
    
 
-     x.push(year)
      data.forEach(element => {
        var el = Object.values(element)
 
-       x.push(el[3])
+       x.push(el)
      })
-     console.log(x)
-     ABC.push(x)
-});
-  
-  x =[]
+    console.log(x)
+   
+
 });
 
-console.log("ABC" ,ABC)
+var chart2_data = []
+
+chartYears.forEach(year => {
+  var A= []
+  var B = x.filter(el=>el[1] == year)
+  
+  A.push(year)
+  B.forEach(byCity =>  {
+      A.push(byCity[3])
+  } )
+  chart2_data.push(A)
+  A=[]
+  B= []
+})
+
+console.log("X", chart2_data)
+
 
 // WATER PER CAPITA
 
@@ -50,17 +57,18 @@ console.log("ABC" ,ABC)
     function drawChart() {
 
       var data = new google.visualization.DataTable();
-      data.addColumn('number', 'Year');
+      data.addColumn('number', 'Yıl');
       data.addColumn('number', 'İstanbul');
       data.addColumn('number', 'Ankara');
       data.addColumn('number', 'İzmir');
+      data.addColumn('number', 'Türkiye');
 
-      data.addRows(ABC);
+      data.addRows(chart2_data);
 
       var options = {
         chart: {
-          title: 'FSDAUFUIAS',
-          subtitle: 'in millions of dollars (USD)'
+          title: 'Ortalama Su Tüketim Oranı',
+          subtitle: 'Litre/Kişi -  Gün'
         },
         width: 600,
         height: 400
