@@ -91,9 +91,9 @@ keşfedilmeye değer yanlarını öğrenmeye hazır mısınız?</p>
                     <form class="form form__subscribe">
                         <input type="text"
                             class="form__subscribe-input form__subscribe-input-orange form__subscribe-shadow form__subscribe-rounded"
-                            placeholder="Enter your email" />
-                        <button type="button" class="form__subscribe-button form__subscribe-button-orange">Get
-                            started</button>
+                            placeholder="Mailinizi Girin" />
+                        <button type="button" class="form__subscribe-button form__subscribe-button-orange">
+                            Abone Ol</button>
                     </form>
                 </div>
             </div>
@@ -232,7 +232,7 @@ Kaynak : TEMA
 
 
                     </p>
-                    <a href="#" class="btn btn-primary btn-stroke btn-rounded">Learn more </a>
+                    {% comment %} <a href="#" class="btn btn-primary btn-stroke btn-rounded">Learn more </a> {% endcomment %}
                 </div>
             </div>
         </div>
@@ -258,7 +258,7 @@ litre olarak ölçülmüştür.
 <br>
 Kaynak: TUİK
                     </p>
-                    <a href="#" class="btn btn-primary btn-stroke btn-rounded">Learn more </a>
+                    {% comment %} <a href="#" class="btn btn-primary btn-stroke btn-rounded">Learn more </a> {% endcomment %}
                 </div>
             </div>
         </div>
@@ -284,7 +284,7 @@ sonucuna varılmaktadır.
 <br>
 Kaynak: İBB Açık Veri Portalı
                     </p>
-                    <a href="#" class="btn btn-primary btn-stroke btn-rounded">Learn more </a>
+                    {% comment %} <a href="#" class="btn btn-primary btn-stroke btn-rounded">Learn more </a> {% endcomment %}
                 </div>
             </div>
         </div>
@@ -310,7 +310,7 @@ miktarına oranı incelendiğinde sabit bir artış ya da azalış oranı bulunm
 <br>
 Kaynak: TUİK
                     </p>
-                    <a href="#" class="btn btn-primary btn-stroke btn-rounded">Learn more </a>
+                    {% comment %} <a href="#" class="btn btn-primary btn-stroke btn-rounded">Learn more </a> {% endcomment %}
                 </div>
             </div>
         </div>
@@ -383,38 +383,7 @@ birlikte yen.</blockquote>
     
     <!-- End Section -->
 
-    <!-- Start Modal Pricing Package 1 -->
-    <div class="modal fade" id="besicPackage" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <div class="package">
-                        <div class="package__heading package__heading-green">
-                            <i class="fa fa-paper-plane"></i>
-                        </div>
-                        <h3 class="package__title">Besic</h3>
-                        <div class="package__content">
-                            <ul>
-                                <li class="included"><i class="fa fa-check"></i> 5 HTML Template</li>
-                                <li class="included"><i class="fa fa-check"></i> 2 Free Vector</li>
-                                <li class="unincluded"><i class="fa fa-times"></i> PSD File</li>
-                                <li class="unincluded"><i class="fa fa-times"></i> Support</li>
-                                <li class="unincluded"><i class="fa fa-times"></i> Documentation</li>
-                            </ul>
-                        </div>
-                        <div class="package__action">
-                            <button type="button" class="btn btn-green btn-stroke btn-rounded">Choose Plan</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    
+   
 
     <!-- Start Section -->
     <section class="section section__gray">
@@ -470,7 +439,7 @@ birlikte yen.</blockquote>
     <!-- Start Back to top -->
     <div class="back-to-top js-back-to-top">
         <span class="fa fa-angle-double-up back-to-top__icon"></span>
-        <span class="back-to-top__text">TOP</span>
+        <span class="back-to-top__text">En Yukarı Çık</span>
     </div>
     <!-- End Back to top -->
 
@@ -478,21 +447,21 @@ birlikte yen.</blockquote>
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
+                <div class="col-lg-6">
                     <div class="footer__widget">
                         <img src="static/assets/brand/logo.png" class="footer__widget-logo" alt="Smooth" />
-                        <p>St.Kemacetan timur No.13 Block Q2 Jakarta - Indonesia</p>
+                        <p>İstanbul - Türkiye</p>
                         <div class="footer__widget-contact">
                             <i class="fa fa-phone"></i>
                             <p>(021) 111-222-333-44</p>
                         </div>
                         <div class="footer__widget-contact">
                             <i class="fa fa-envelope"></i>
-                            <p>info@yourdomain.com</p>
+                            <p>info@1H2O.com</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col-lg-2 col-sm-3">
+                {% comment %} <div class="col-6 col-lg-2 col-sm-3">
                     <div class="footer__widget">
                         <h4 class="footer__widget-title">Product</h4>
                         <ul class="footer__widget-linklist">
@@ -525,10 +494,10 @@ birlikte yen.</blockquote>
                             <li><a href="#">Site map</a></li>
                         </ul>
                     </div>
-                </div>
-                <div class="col-6 col-lg-3 col-sm-3">
+                </div> {% endcomment %}
+                <div class="col-6 col-lg-6 col-sm-3">
                     <div class="footer__widget">
-                        <h4 class="footer__widget-title">Follow us</h4>
+                        <h4 class="footer__widget-title">Takip Edin</h4>
                         <ul class="footer__widget-network">
                             <li><a href="#" class="footer__widget-network-link"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#" class="footer__widget-network-link"><i class="fa fa-twitter"></i></a></li>
@@ -544,13 +513,13 @@ birlikte yen.</blockquote>
                     <div class="footer__subfooter">
                         <div class="row">
                             <div class="col-md-6">
-                                <p>© <a href="#">99webpage</a> | Web Design Indonesia 2020. All Rights Reserved.</p>
+                                <p>© <a href="#">IBB</a> | Tüm hakları saklıdır.</p>
                             </div>
                             <div class="col-md-6 text-right">
                                 <ul class="footer__subfooter-liststyle">
-                                    <li><a href="#">Terms Of Service</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Help</a></li>
+                                    
+                                    <li><a href="#">Gizlilik Sözleşmesi</a></li>
+                                    <li><a href="#">Yardım</a></li>
                                 </ul>
                             </div>
                         </div>
