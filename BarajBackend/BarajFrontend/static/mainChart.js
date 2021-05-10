@@ -11,7 +11,7 @@
   });
 
 
-  console.log(chart_forecastData)
+  
   
 
 google.charts.load('current', {'packages':['annotationchart']});

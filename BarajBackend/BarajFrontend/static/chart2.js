@@ -26,7 +26,7 @@ while(year <=2018){
 
        chart2Data_NotModified.push(el)
      })
-    //console.log(chart2Data_NotModified)
+  //  console.log(chart2Data_NotModified)
    
 
 });
@@ -46,7 +46,7 @@ chartYears.forEach(year => {
   B= []
 })
 
-//console.log("X", chart2_data)
+console.log("X", chart2_data)
 
 
 // WATER PER CAPITA
