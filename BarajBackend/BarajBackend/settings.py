@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-%1(x1mfqg%=!ns9t4@_b4g)y(2%&%-8e1y=qi-a!k*etyt0jq1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['django-env.eba-kuysisxr.us-west-2.elasticbeanstalk.com']
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'kisiBasiCekilenSu',
     'usageRate',
     'barajdanCekilenSu',
+    'forecastData',
 
     'rest_framework',
     'django_filters',

@@ -46,7 +46,7 @@ chartYears.forEach(year => {
   B= []
 })
 
-console.log("X", chart2_data)
+//console.log("X", chart2_data)
 
 
 // WATER PER CAPITA
@@ -71,7 +71,15 @@ console.log("X", chart2_data)
           subtitle: 'Litre/Kişi -  Gün'
         },
         width: 600,
-        height: 400
+        height: 400,
+        hAxis: {
+          title: '',
+          format: ' ',
+         //  viewWindow: {
+         //    min: [7, 30, 0],
+         //    max: [17, 30, 0]
+         //  }
+        },
       };
 
       var chart = new google.charts.Line(document.getElementById('waterPerCapita'));

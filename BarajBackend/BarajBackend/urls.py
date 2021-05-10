@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 
 from . import views
-import istanbulnufus,kisiBasiCekilenSu,usageRate,barajdanCekilenSu
+import istanbulnufus,kisiBasiCekilenSu,usageRate,barajdanCekilenSu,forecastData
 urlpatterns = [
         path('admin/', admin.site.urls),
         path('', views.homepage),
@@ -25,5 +25,6 @@ urlpatterns = [
         path('api/waterPerCapita/', include('kisiBasiCekilenSu.urls')),
         path('api/usageRate/', include('usageRate.urls')),
         path('api/damVolume/', include('barajdanCekilenSu.urls')),
+        path('api/forecastData/', include('forecastData.urls')),
 
 ]

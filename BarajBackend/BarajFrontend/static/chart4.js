@@ -52,7 +52,7 @@ Chart4_Years.forEach(year => {
     T = []
 })
 
-console.log("Chart- 4", chart4_data)
+//console.log("Chart- 4", chart4_data)
 
 
 
@@ -84,14 +84,14 @@ console.log("Chart- 4", chart4_data)
 
         var button = document.getElementById('change');
 
-        button.onclick = function () {
+        // button.onclick = function () {
 
-          // If the format option matches, change it to the new option,
-          // if not, reset it to the original format.
-          options.hAxis.format === ' ' ?
-          options.hAxis.format = ' ' :
-          options.hAxis.format = ' ';
+        //   // If the format option matches, change it to the new option,
+        //   // if not, reset it to the original format.
+        //   options.hAxis.format === ' ' ?
+        //   options.hAxis.format = ' ' :
+        //   options.hAxis.format = ' ';
 
-          chart.draw(data, options);
-        };
+        // };
+        chart.draw(data, options);
       }
