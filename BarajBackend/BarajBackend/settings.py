@@ -10,11 +10,17 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+
+
 from pathlib import Path
 
 import os 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -24,9 +30,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%1(x1mfqg%=!ns9t4@_b4g)y(2%&%-8e1y=qi-a!k*etyt0jq1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG=True
 
-#ALLOWED_HOSTS = ['django-env.eba-kuysisxr.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['django-env.eba-kuysisxr.us-west-2.elasticbeanstalk.com','ibbbaraj.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -37,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 
     'istanbulnufus',
@@ -48,6 +55,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'corsheaders',
+ 
+
 ]
 
 REST_FRAMEWORK = {
@@ -66,8 +75,13 @@ CORS_ORIGIN_WHITELIST = [
 'http://127.0.0.1:8000',
 'http://localhost:8000'
 ]
+
+MIDDLEWARE_CLASSES = (
+     'whitenoise.middleware.WhiteNoiseMiddleware',
+)
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -75,6 +89,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'BarajBackend.urls'
@@ -82,7 +97,7 @@ ROOT_URLCONF = 'BarajBackend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'BarajFrontend')],
+        'DIRS': [os.path.join(BASE_DIR,'template')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -161,11 +176,24 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+# STATICFILES_DIRS = [
+#     BASE_DIR / "BarajFrontend/static",
+#     '/var/www/static/',
+# ]
+
+print('BaseDIR = ', BASE_DIR)
+
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "BarajFrontend/static",
-    '/var/www/static/',
-]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static' )
+
+
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static', 'static_dirs'),
+# )
+
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

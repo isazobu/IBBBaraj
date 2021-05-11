@@ -1,0 +1,517 @@
+
+
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+
+
+
+<head>
+    <title>IBB - Baraj ve Su Kullanım Oranları</title>
+
+    <meta charset="utf-8">
+    <meta name="keywords"
+        content="IBB - Baraj ve Su Kullanım Oranları">
+    <meta name="description"
+        content="IBB - Baraj ve Su Kullanım Oranları">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="İsa ZOBU">
+
+    <link rel="icon" type="image/png" href="{% static 'favicon/ibb.png' %}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{% static 'favicon/ibb.png' %}" sizes="16x16">
+    <link rel="icon" type="image/png" href="{% static 'favicon/ibb.png' %}" sizes="144x144">
+    <link rel="icon" type="image/png" href="{% static 'favicon/ibb.png' %}" sizes="196x196">
+
+    <link rel="apple-touch-icon" href="{% static 'favicon/ibb.png' %}">
+
+    <!-- Template stylesheet -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.min.css' %}">
+
+    <!-- chart1 -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- <script type="text/javascript">
+        
+    </script> -->
+
+</head>
+
+<body>
+
+    <!-- Start Header -->
+    <header class="header js-header-scroll">
+        <nav hidden>
+            <div class="nav-header">
+                <a href="#" class="brand">
+                    <img src="{% static 'assets/brand/logo.png' %}" class="logo" alt="2h1o" />
+                    
+                </a>
+                <button class="toggle-bar">
+                    <span class="fa fa-bars"></span>
+                </button>
+            </div>
+            <!-- Start Header menu for mobile -->
+            <div class="header__mobile js-header-menu">
+                <a href="#" class="header__mobile-brand">Menu</a>
+                <button class="toggle-bar header__mobile-toggle">
+                    <span class="fa fa-remove"></span>
+                </button>
+            </div>
+            <!-- End Header menu for mobile -->
+            <ul class="menu">
+                <li class="active"><a href="#"></a></li>
+                    
+              
+               </a>
+                                          
+               
+             
+               
+            </ul>
+     
+        </nav>
+    </header>
+    <!-- End Header -->
+
+    <!-- Start Masthead -->
+    <section class="masthead js-masthead-height pb-0">
+        <div class="container masthead__browser">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="masthead__content text-center">
+                        <h1 class="masthead__content-title">Farklı Yaşamların Ortak İhtiyacına Yolculuk</h1>
+                        <p class="masthead__content-subtitle">Milyarlarca yıl boyunca milyarlarca insanın ortak ihtiyacı olan suyun
+keşfedilmeye değer yanlarını öğrenmeye hazır mısınız?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-lg-center mb-60">
+                <div class="col-lg-5">
+                    <form class="form form__subscribe">
+                        <input type="text"
+                            class="form__subscribe-input form__subscribe-input-orange form__subscribe-shadow form__subscribe-rounded"
+                            placeholder="Mailinizi Girin" />
+                        <button type="button" class="form__subscribe-button form__subscribe-button-orange">
+                            Abone Ol</button>
+                    </form>
+                </div>
+            </div>
+
+            
+    <!-- Start Section -->
+    <section class="section pb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <h2 class="section__heading section__heading-center">İstanbul Baraj Doluluk Oranları Tahminleme Modeli</h2>
+                </div>
+                                 
+            </div>
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <p>
+                       Tahminleme modelinde İstanbul Büyükşehir Belediyesi’nin açık veri portalından
+                        edindiğimiz “Baraj Doluluk Oranları” adlı veri seti kullanıldı.
+                         Veriler zamana bağlı ve sürekli veriler olduğu için zaman serileri analizinden faydalanıldı.
+                          Durağan bir veri seti olması nedeniyle iyi bir tahminleme sonucu elde edildi.
+                          <br>
+                        Kaynak: İBB Açık Veri Portalı
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Section -->
+
+            
+        
+        </div>
+    </section>
+    <!-- End Masthead -->
+
+
+            <div class="row" style="padding-bottom: 123px;">
+                <div class="col-12">
+                    <div class="masthead__browser-wrapper">
+                        <div class="owl-active-nav">
+                       
+                                <!-- Start screenhot 01 -->
+                                       <div id='main_div' style='width: 1000px; height: 600px;'></div>
+
+                                <!-- End screenhot 01 -->
+                       
+                        </div>
+                    </div>
+                </div>
+            </div
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="section__column section__column-left">
+
+                        <span class="icon column-icon"><img style="width: 45px; height: 60px; border-radius: 30%"
+                                src="{% static 'favicon/bardak.png' %}" alt=""></span>
+                        <h4>Günde en az 2.5 litre su tüketelim</h4>
+               
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="section__column section__column-left">
+                        <span class="icon column-icon"><img style="width: 45px; height: 60px; border-radius: 30%"
+                                src="{% static 'favicon/cam.png' %}" alt=""></span>
+                        <h4>Suyumuzu tasarruflu kullanalım</h4>
+                  
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="section__column section__column-left">
+                        <span class="icon column-icon"><img style="width: 45px; height: 60px; border-radius: 30%"
+                                src="{% static 'favicon/bath.png' %}" alt=""></span>
+                        <h4>Su kaynaklarımızı koruyalım</h4>
+            
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="section__column section__column-left">
+                        <span class="icon column-icon"><img style="width: 45px; height: 60px; border-radius: 30%"
+                                src="{% static 'favicon/river.png' %}" alt=""></span>
+                        <h4>Mavi gezegene sahip çıkalım</h4>
+                    
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="section__column section__column-left">
+                        <span class="icon column-icon"><img style="width: 45px; height: 60px; border-radius: 30%"
+                                src="{% static 'favicon/ocean.png' %}" alt=""></span>
+                        <h4>Doğayı kucaklayalım</h4>
+                   
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="section__column section__column-left">
+                        <span class="icon column-icon"><img style="width: 45px; height: 60px; border-radius: 30%"
+                                src="{% static 'favicon/damla.png' %}" alt=""></span>
+                                   <h4>Musluklarımızı kapatalım</h4>
+                     
+                       
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Section -->
+
+    <!-- Start Section -->
+    <section class="section section__gray">
+        <div class="container">
+            <div class="row mt-40">
+                <div class="col-lg-7 order-lg-4 offset-lg-1 mb-40">
+
+                    <!-- CHART1 -->
+                    <div id="chart1_div"></div>
+
+                </div>
+                <div class="col-lg-4 align-self-center mb-40">
+                    <h2>Suyun Ev İçi Kullanım Alanları</h2>
+                    <p>
+                       Evdeki suyun yaklaşık %26’sı tuvaletlerde, %22’si çamaşır makinelerinde ve
+%17&#39;si duşlarda tüketilirken %14 gibi büyük bir oranı ise ev içi tesisatlarından sızıntı ile
+kaybedilmektedir (2015).
+<br>
+Kaynak : TEMA
+
+
+                    </p>
+                    "{% comment %} <a href="#" class="btn btn-primary btn-stroke btn-rounded">Learn more </a> "{% endcomment %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Section -->
+
+    <!-- Start Section -->
+    <section class="section">
+        <div class="container">
+            <div class="row mt-40">
+                <div class="col-lg-7 mb-40">
+
+                    <!-- CHART2 -->
+                    <div id="waterPerCapita"></div>
+
+                </div>
+                <div class="col-lg-4 align-self-center offset-lg-1 mb-40">
+                    <h2>Kişi Başı Çekilen Günlük Su Miktarı</h2>
+                    <p>
+                        İstanbul’da kişi başı çekilen günlük su miktarı ortalama 191 litre iken,
+Ankara’da 229 litreyi ve İzmir’de 227 litreyi bulmaktadır. Türkiye’de ise bu oran 232
+litre olarak ölçülmüştür.
+<br>
+Kaynak: TUİK
+                    </p>
+                    "{% comment %} <a href="#" class="btn btn-primary btn-stroke btn-rounded">Learn more </a> "{% endcomment %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Section -->
+
+    <!-- Start Section -->
+    <section class="section pt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 order-lg-4 offset-lg-1 mb-40">
+
+                    <!-- CHART 3 -->
+                    <div id="nufusSu" style="width: 600px; height: 300px"></div>
+
+                </div>
+                <div class="col-lg-4 align-self-center mb-40">
+                    <h2>İstanbul’a ve Türkiye'ye Verilen Temiz Su Miktarı</h2>
+                    <p>
+                   İstanbul’a verilen temiz su miktarının yıllara göre arttığı görülmektedir. Bu
+verinin İstanbul nüfusuna oranı incelendiğinde artışın sürekliliğinin devam ettiği
+sonucuna varılmaktadır.
+<br>
+Kaynak: İBB Açık Veri Portalı
+                    </p>
+                    "{% comment %} <a href="#" class="btn btn-primary btn-stroke btn-rounded">Learn more </a> "{% endcomment %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Section -->
+
+    <!-- Start Section -->
+    <section class="section pt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 order-lg-4 offset-lg-1 mb-40">
+
+                    <!-- CHART 4 -->
+                    <div id="chart4" style="width: 600px; height: 300px"></div>
+
+                </div>
+                <div class="col-lg-4 align-self-center mb-40">
+                    <h2>İçme ve Kullanma Suyu Şebekesi İçin Barajlardan Çekilen Su Miktarı</h2>
+                    <p>
+                       İstanbul’da içme ve kullanma suyu şebekesi için barajlardan çekilen toplam su
+miktarının Türkiye’de içme ve kullanma suyu şebekesi için barajlardan çekilen su
+miktarına oranı incelendiğinde sabit bir artış ya da azalış oranı bulunmadığı görülebilir.
+<br>
+Kaynak: TUİK
+                    </p>
+                    "{% comment %} <a href="#" class="btn btn-primary btn-stroke btn-rounded">Learn more </a> "{% endcomment %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Section -->
+
+    <!-- Start Section -->
+    <section class="section section__gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3 text-center mb-20">
+                    <div class="owl-carousel js-owl-testimoni">
+                        <!-- Start testimoni 01 -->
+                        <div class="item">
+                            <div class="testimoni">
+                                <blockquote>Sudan daha yumuşak ve ince başka bir şey yoktur, fakat önüne çıkan her şeyi
+sürükleyecek ve parçalayabilecek kadar güçlüdür.
+                                </blockquote>
+                                <p class="testimoni__author"><a href="#">Lao Tzu</a></p>
+                                <a href="#" class="testimoni__avatar"><img src="{% static 'assets/images/lao.png' %}"
+                                        class="testimoni__avatar-image" alt="Lao Tzu" /></a>
+                            </div>
+                        </div>
+                        <!-- End testimoni 01 -->
+
+                        <!-- Start testimoni 02 -->
+                        <div class="item">
+                            <div class="testimoni">
+                                <blockquote>Değişmemelisin hiçbir şeyle <strong>bir bardak su</strong> içmenin mutluluğunu. Fakat ne kadar
+sevinç varsa yaşamak özlemiyle dolmalısın.</blockquote>
+                                <p class="testimoni__author"><a href="#">Ataol Behramoğlu</a></p>
+                                <a href="#" class="testimoni__avatar"><img src="{% static 'assets/images/ataol.png' %}"
+                                        class="testimoni__avatar-image" alt="Ataol Behramoğlu" /></a>
+                            </div>
+                        </div>
+                        <!-- End testimoni 02 -->
+
+                        <!-- Start testimoni 03 -->
+                        <div class="item">
+                            <div class="testimoni">
+                                <blockquote>Su! Ey su, senin ne tadın ne rengin ne kokun var! Tarife gelmezsin. Seni tadarız
+ama, gizini çözemeyiz. Sen yaşama gerekli değil,yaşamın ta kendisisin. İçimize,
+duyularımızla kavranmaz bir haz salarsın. Bir bir vazgeçtiğimiz güçler, seninle
+birlikte yen.</blockquote>
+                                <p class="testimoni__author"><a href="#">Antoıne De Saınt Exupery</a></p>
+                                <a href="#" class="testimoni__avatar"><img src="{% static 'assets/images/Antoıne.png' %}"
+                                        class="testimoni__avatar-image" alt="Antoıne De Saınt Exupery" /></a>
+                            </div>
+                        </div>
+                        <!-- End testimoni 03 -->
+                                                <!-- Start testimoni 04 -->
+                        <div class="item">
+                            <div class="testimoni">
+                                <blockquote>Suyun değeri kuyu kuruyunca anlaşılır.</blockquote>
+                                <p class="testimoni__author"><a href="#">Thomas Fuller</a></p>
+                                <a href="#" class="testimoni__avatar"><img src="{% static 'assets/images/thomas.png' %}"
+                                        class="testimoni__avatar-image" alt="Thomas Fuller" /></a>
+                            </div>
+                        </div>
+                        <!-- End testimoni 04 -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Section -->
+
+    <!-- Start Section -->
+    
+    <!-- End Section -->
+
+   
+
+    <!-- Start Section -->
+    <section class="section section__gray">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="owl-active-nav">
+                        <div class="owl-carousel js-owl-clients">
+                            <!-- Start client 01 -->
+                            <div class="item">
+                                <a href="https://www.ibb.istanbul/" class="client">
+                                    <img src="{% static 'assets/images/clients/ibb.png' %}" class="client_logo-hover"
+                                        alt="İstanbul Büyükşehir Belediyesi" />
+                                    <img src="{% static 'assets/images/clients/ibb.png' %}" class="client_logo"
+                                        alt="İstanbul Büyükşehir Belediyesi" />
+                                </a>
+                            </div>
+                            <!-- End client 01 -->
+
+                            <!-- Start client 02 -->
+                            <div class="item">
+                                <a href="https://zeministanbul.ist/tr/" class="client">
+                                    <img src="{% static 'assets/images/clients/ibb-zemin.png' %}" class="client_logo-hover"
+                                        alt="Client name" />
+                                    <img src="{% static 'assets/images/clients/ibb-zemin.png' %}" class="client_logo"
+                                        alt="Client name" />
+                                </a>
+                            </div>
+                            <!-- End client 02 -->
+
+                            <!-- Start client 03 -->
+                            <div class="item">
+                                <a href="https://prisync.com/" class="client">
+                                    <img src="{% static 'assets/images/clients/prisync.png' %}" class="client_logo-hover"
+                                        alt="Client name" />
+                                    <img src="{% static 'assets/images/clients/prisync.png' %}" class="client_logo"
+                                        alt="Client name" />
+                                </a>
+                            </div>
+                            <!-- End client 03 -->
+
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Section -->
+
+    
+
+    <!-- Start Back to top -->
+    <div class="back-to-top js-back-to-top">
+        <span class="fa fa-angle-double-up back-to-top__icon"></span>
+        <span class="back-to-top__text">Yukarı Çık</span>
+    </div>
+    <!-- End Back to top -->
+
+    <!-- Start Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="footer__widget">
+                        <img src="{% static 'assets/brand/logo.png' %}" class="footer__widget-logo" alt="2h1o" />
+                        <p>İstanbul - Türkiye</p>
+                        <div class="footer__widget-contact">
+                            <i class="fa fa-phone"></i>
+                            <p>(021) 111-222-333-44</p>
+                        </div>
+                        <div class="footer__widget-contact">
+                            <i class="fa fa-envelope"></i>
+                            <p>info@2h1o.com</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="col-6 col-lg-6 col-sm-3">
+                    <div class="footer__widget">
+                        <h4 class="footer__widget-title">Sosyal Medya Hesaplarımız</h4>
+                        <ul class="footer__widget-network">
+                            <li><a href="https://www.facebook.com/istanbulbuyuksehirbld/" class="footer__widget-network-link"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/istanbulbld" class="footer__widget-network-link"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://tr.linkedin.com/company/istanbul-buyuksehir-belediyesi" class="footer__widget-network-link"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCdHLGlFVLXSF8avtflkMrHA" class="footer__widget-network-link"><i class="fa fa-youtube-play"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="footer__subfooter">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>© <a href="#">2H1O</a> | Tüm hakları saklıdır.</p>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <ul class="footer__subfooter-liststyle">
+                                    
+                                    <li><a href="#">Gizlilik Sözleşmesi</a></li>
+                                    <li><a href="#">Yardım</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+
+    <!-- Template main JavaScript -->
+    <script src="{% static 'assets/js/main.min.js' %}"></script>
+
+    <script>const player = new Plyr('#player');</script>
+
+    <!-- Template custome JavaScript -->
+    <script src="{% static 'assets/js/scripts.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'chart1.js' %}"></script>
+    <script type="text/javascript" src="{% static 'chart2.js' %}"></script> 
+    <script type="text/javascript" src="{% static 'chart3.js' %}"></script> 
+    <script type="text/javascript" src="{% static 'chart4.js' %}"></script>
+    <script type="text/javascript" src="{% static 'mainChart.js' %}"></script>
+
+
+</body>
+
+
+
+</html>
